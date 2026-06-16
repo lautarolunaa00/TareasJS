@@ -25,13 +25,13 @@ if (operacion === "suma") {
     resultado = numero1 / numero2;
     console.log(`${numero1} ÷ ${numero2} = ${resultado}`);
   } else {
-    console.log(
+    console.error(
       "❌ Error: No se puede dividir por cero. Ingrese un divisor válido.",
     );
   }
 } else {
   // 5. Si la operación no es válida, informamos al usuario
-  console.log(
+  console.error(
     `❌ Operación no válida: "${operacion}". Por favor, ingrese suma, resta, multiplicación o división.`,
   );
 }
