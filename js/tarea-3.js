@@ -1,3 +1,4 @@
+
 // 1. Pedimos las tres notas y las convertimos a números decimales
 let nota1 = parseFloat(
   prompt("Ingrese la primera nota (puede usar decimales):"),
