@@ -4,6 +4,10 @@ console.log("\n===== TAREA 1: TRABAJEMOS CON STRING =====");
 let fraseUsuario = prompt("Ingrese una frase o texto:");
 let palabraBuscadaUsuario = prompt("Ingrese la palabra que desea buscar:");
 
+// Eliminamos los espacios en blanco al principio y al final (sugerencia del profe)
+fraseUsuario = fraseUsuario.trim();
+palabraBuscadaUsuario = palabraBuscadaUsuario.trim();
+
 // Convertimos todo a minúsculas para ignorar si usó mayúsculas
 let fraseMinuscula = fraseUsuario.toLowerCase();
 let palabraMinuscula = palabraBuscadaUsuario.toLowerCase();
