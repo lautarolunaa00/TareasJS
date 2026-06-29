@@ -4,7 +4,7 @@ console.log("\n===== TAREA 1: TRABAJEMOS CON STRING =====");
 let fraseUsuario = prompt("Ingrese una frase o texto:");
 let palabraBuscadaUsuario = prompt("Ingrese la palabra que desea buscar:");
 
-// Eliminamos los espacios en blanco al principio y al final (sugerencia del profe)
+// Eliminamos los espacios en blanco al principio y al final
 fraseUsuario = fraseUsuario.trim();
 palabraBuscadaUsuario = palabraBuscadaUsuario.trim();
 
