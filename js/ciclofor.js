@@ -13,7 +13,7 @@ for (let fila = 1; fila <= 5; fila++) {
   console.log(linea);
 }
 
-// 4. Gestor de "Horas de Estudio" (for) ------------------------------
+// 4. Gestor de "Horas de Estudio" ------------------------------
 // Pedir horas por cada día de la semana (7 días), acumular, y calcular el promedio.
 
 console.log("\n📚 Ejercicio 4: Gestor de Horas de Estudio");
@@ -30,18 +30,17 @@ const diasSemana = [
 let totalHoras = 0;
 
 for (let dia = 0; dia < 7; dia++) {
-  let horas = Number(
-    prompt(`¿Cuántas horas estudiaste el ${diasSemana[dia]}?`),
-  );
+  let horas;
 
-  // Si ingresó un valor negativo o inválido, pedimos de nuevo
-  while (isNaN(horas) || horas < 0) {
-    horas = Number(
-      prompt(
-        `⚠️ Valor inválido. ¿Cuántas horas estudiaste el ${diasSemana[dia]}?`,
-      ),
-    );
-  }
+  // Usamos do...while para no repetir el prompt dos veces
+  do {
+    horas = Number(prompt(`¿Cuántas horas estudiaste el ${diasSemana[dia]}?`));
+    if (isNaN(horas) || horas < 0) {
+      console.log(
+        "⚠️ Ingresá un número positivo (no se permiten valores negativos ni letras).",
+      );
+    }
+  } while (isNaN(horas) || horas < 0);
 
   totalHoras += horas;
 }

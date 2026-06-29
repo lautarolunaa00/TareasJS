@@ -17,10 +17,10 @@ while (totalAhorrado < 1000) {
   }
 
   totalAhorrado += monto;
-  console.log(`Sumaste $${monto}. Total acumulado: $${totalAhorrado}`);
+  console.log(`Sumaste $${monto.toFixed(2)}. Total acumulado: $${totalAhorrado.toFixed(2)}`);
 }
 
-console.log(`🎉 ¡Objetivo alcanzado! Ahorraste $${totalAhorrado}`);
+console.log(`🎉 ¡Objetivo alcanzado! Ahorraste $${totalAhorrado.toFixed(2)}`);
 
 // 3. El Simulador de "Token de Seguridad" (while) --------------------
 // Máximo 3 intentos para adivinar un código fijo. Dos condiciones en el while.
@@ -64,14 +64,14 @@ while (seguirComprando === "si") {
 
   // Validamos que el precio sea positivo
   if (isNaN(precio) || precio <= 0) {
-    console.log("⚠️ Precio inválido, ingresá un número positivo.");
+    console.log("⚠️ El precio debe ser mayor a $0. Ingresá un número positivo válido.");
     continue;
   }
 
   totalCarrito += precio;
   cantidadProductos++;
   console.log(
-    `Producto #${cantidadProductos} - $${precio} | Total parcial: $${totalCarrito}`,
+    `Producto #${cantidadProductos} - $${precio.toFixed(2)} | Total parcial: $${totalCarrito.toFixed(2)}`,
   );
 
   let respuesta = prompt("¿Querés agregar otro producto? (si/no):");
@@ -86,11 +86,11 @@ while (seguirComprando === "si") {
 if (totalCarrito > 5000) {
   let descuento = totalCarrito * 0.1;
   console.log(`\n🎉 ¡Has obtenido un 10% de descuento!`);
-  console.log(`Subtotal: $${totalCarrito}`);
-  console.log(`Descuento: -$${descuento}`);
+  console.log(`Subtotal: $${totalCarrito.toFixed(2)}`);
+  console.log(`Descuento: -$${descuento.toFixed(2)}`);
   totalCarrito -= descuento;
 }
 
 console.log(
-  `\n💳 Total final: $${totalCarrito} (${cantidadProductos} productos)`,
+  `\n💳 Total final: $${totalCarrito.toFixed(2)} (${cantidadProductos} productos)`,
 );
