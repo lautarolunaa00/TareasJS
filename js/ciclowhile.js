@@ -55,6 +55,10 @@ if (codigoIngresado !== codigoCorrecto) {
 
 console.log("\n🛒 Ejercicio 5: Carrito de Descuentos Progresivos");
 
+// Funciones auxiliares para el carrito
+const esPrecioValido = (precio) => !isNaN(precio) && precio > 0;
+const calcularDescuento = (total) => (total > 5000 ? total * 0.1 : 0);
+
 let totalCarrito = 0;
 let cantidadProductos = 0;
 let seguirComprando = "si";
@@ -62,8 +66,8 @@ let seguirComprando = "si";
 while (seguirComprando === "si") {
   let precio = Number(prompt("Ingresá el precio del producto:"));
 
-  // Validamos que el precio sea positivo
-  if (isNaN(precio) || precio <= 0) {
+  // Validamos usando la función flecha
+  if (!esPrecioValido(precio)) {
     console.log("⚠️ El precio debe ser mayor a $0. Ingresá un número positivo válido.");
     continue;
   }
@@ -82,9 +86,10 @@ while (seguirComprando === "si") {
   }
 }
 
-// Aplicamos el descuento solo al final, después de sumar todo
-if (totalCarrito > 5000) {
-  let descuento = totalCarrito * 0.1;
+// Aplicamos el descuento solo al final usando la función
+let descuento = calcularDescuento(totalCarrito);
+
+if (descuento > 0) {
   console.log(`\n🎉 ¡Has obtenido un 10% de descuento!`);
   console.log(`Subtotal: $${totalCarrito.toFixed(2)}`);
   console.log(`Descuento: -$${descuento.toFixed(2)}`);

@@ -27,21 +27,25 @@ const diasSemana = [
   "Sábado",
   "Domingo",
 ];
-let totalHoras = 0;
-
-for (let dia = 0; dia < 7; dia++) {
+// Función para pedir horas válidas (Flecha)
+const pedirHorasValidas = (dia) => {
   let horas;
-
   // Usamos do...while para no repetir el prompt dos veces
   do {
-    horas = Number(prompt(`¿Cuántas horas estudiaste el ${diasSemana[dia]}?`));
+    horas = Number(prompt(`¿Cuántas horas estudiaste el ${dia}?`));
     if (isNaN(horas) || horas < 0) {
       console.log(
         "⚠️ Ingresá un número positivo (no se permiten valores negativos ni letras).",
       );
     }
   } while (isNaN(horas) || horas < 0);
+  return horas;
+};
 
+let totalHoras = 0;
+
+for (let dia = 0; dia < 7; dia++) {
+  let horas = pedirHorasValidas(diasSemana[dia]);
   totalHoras += horas;
 }
 
